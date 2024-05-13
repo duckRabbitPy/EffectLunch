@@ -12,6 +12,7 @@ import {
   InAppNotificationError,
 } from "./errors";
 import { demoState } from "./demohelpers";
+import { PageTag, Role } from "./types";
 
 // dummy services class
 export class services {
@@ -66,7 +67,7 @@ export class services {
   }
   static sendEmailNotifications(recipientId: string[]) {
     const asyncEmailCall = async () => {
-      return "sentIds";
+      return "sentEmailId";
     };
 
     const sendSingleEmail = () => {

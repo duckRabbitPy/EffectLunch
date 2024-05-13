@@ -1,9 +1,9 @@
-type Role = {
+export type Role = {
   id: string;
   name: string;
   email: string;
 };
 
-type PageTag = {
+export type PageTag = {
   id: string;
 };
