@@ -74,10 +74,10 @@ export class services {
         try: () => asyncEmailCall(),
         catch: () =>
           new EmailNotificationError({ message: "Error sending email" }),
-      }).pipe(Effect.retry({ times: 2 }));
+      }).pipe(Effect.retry({ times: 2 }))
     };
 
-    return Effect.forEach(recipientId, sendSingleEmail);
+    return Effect.forEach(recipientId, sendSingleEmail).pipe(Effect.withConcurrency(3))
   }
 
   static generateNewPageTag(
